@@ -52,7 +52,7 @@ def scrape(guild_id, channel_id):
                         f.write(f"https://cdn.discordapp.com/avatars/{i2[0]}/{i2[1]}.png?size=512\n")
                     except:
                         pass
-        input("Scraped {len(pfps)} Avatars and {len(usernames)} Usernames!")
+        input(f"Scraped {len(pfps)} Avatars and {len(usernames)} Usernames!")
         return bot.gateway.session.guild(guild_id).members
     except Exception as err:
         input(f"Failed to scrape. Error: {err}")
