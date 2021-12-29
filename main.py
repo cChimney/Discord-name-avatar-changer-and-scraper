@@ -25,7 +25,8 @@ def scrape(guild_id, channel_id):
         for info in (dict(g.members).items()):
             info2 = list(info)
             usernames.append(info2[1]["username"])
-            pfps.append(info2[0]+":"+info2[1]["avatar"])
+            avatar = info2[1]["avatar"]
+            pfps.append(f"{info2[0]}:{avatar}")
         with open("data/usernames.txt", "a+") as w:
             for i in usernames:
                 if "|" in i:
