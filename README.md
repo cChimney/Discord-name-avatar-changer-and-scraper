@@ -1,4 +1,8 @@
 # Discord-name-avatar-changer-and-scraper
-Change the name and pfp of ur accounts, uses tokens.txt for ur tokens. Also scrapes the pfps+names from a server chosen by you. 
+Change the names and avatars of ur accounts, using tokens.txt for ur tokens. Also scrapes the avatars and names from a server chosen by you. 
+
+Setup:
+1. Put tokens in tokens.txt, any supported format but must include password.
+2. Put
 
 For hq tokens go to http://discord.gg/tokenshop or http://t.me/praisetelegram
