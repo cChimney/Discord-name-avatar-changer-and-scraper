@@ -14,44 +14,47 @@ def close_after_fetching(resp, guild_id):
 def rc(x):
     ''.join(random.choices(string.ascii_uppercase + string.digits, k=x))
 def scrape(guild_id, channel_id):
-    usernames = []
-    pfps = []
-    bot.gateway.fetchMembers(guild_id, channel_id, wait=1,reset=False,keep="all") #get all user attributes, wait 1 second between requests
-    bot.gateway.command({'function': close_after_fetching, 'params': {'guild_id': guild_id}})
-    bot.gateway.run()
-    bot.gateway.resetSession() #saves 10 seconds when gateway is run again
-    g = bot.gateway.session.guild(guild_id)
-    for info in (dict(g.members).items()):
-        info2 = list(info)
-        usernames.append(info2[1]["username"])
-        pfps.append(info2[0]+":"+info2[1]["avatar"])
-    with open("data/usernames.txt", "a+") as w:
-        for i in usernames:
-            if "|" in i:
-                pass
-            elif "HAPEBEAST" in i:
-                pass
-            elif "BUSINESS APE" in i:
-                pass
-            else:
-                try:
-                    w.write(f"{i}\n")
-                except:
+    try:
+        usernames = []
+        pfps = []
+        bot.gateway.fetchMembers(guild_id, channel_id, wait=1,reset=False,keep="all") #get all user attributes, wait 1 second between requests
+        bot.gateway.command({'function': close_after_fetching, 'params': {'guild_id': guild_id}})
+        bot.gateway.run()
+        bot.gateway.resetSession() #saves 10 seconds when gateway is run again
+        g = bot.gateway.session.guild(guild_id)
+        for info in (dict(g.members).items()):
+            info2 = list(info)
+            usernames.append(info2[1]["username"])
+            pfps.append(info2[0]+":"+info2[1]["avatar"])
+        with open("data/usernames.txt", "a+") as w:
+            for i in usernames:
+                if "|" in i:
                     pass
-    with open("data/pfps.txt", "a+") as f:
-        for i in pfps:
-            i2 = i.split(":")
-            if i2[1] == "None":
-                pass
-            elif i2[1] == None:
-                pass
-            else:
-                try:
-                    f.write(f"https://cdn.discordapp.com/avatars/{i2[0]}/{i2[1]}.png?size=512\n")
-                except:
+                elif "HAPEBEAST" in i:
                     pass
-    input("Scraped {len(pfps)} Avatars and {len(usernames)} Usernames!")
-    return bot.gateway.session.guild(guild_id).members
+                elif "BUSINESS APE" in i:
+                    pass
+                else:
+                    try:
+                        w.write(f"{i}\n")
+                    except:
+                        pass
+        with open("data/pfps.txt", "a+") as f:
+            for i in pfps:
+                i2 = i.split(":")
+                if i2[1] == "None":
+                    pass
+                elif i2[1] == None:
+                    pass
+                else:
+                    try:
+                        f.write(f"https://cdn.discordapp.com/avatars/{i2[0]}/{i2[1]}.png?size=512\n")
+                    except:
+                        pass
+        input("Scraped {len(pfps)} Avatars and {len(usernames)} Usernames!")
+        return bot.gateway.session.guild(guild_id).members
+    except Exception as err:
+        input(f"Failed to scrape. Error: {err}")
 
 def changer(namepfp, tokenformat):
     tokens = []
