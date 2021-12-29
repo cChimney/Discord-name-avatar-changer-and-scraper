@@ -6,3 +6,5 @@ Setup:
 2. Put
 
 For hq tokens go to http://discord.gg/tokenshop or http://t.me/praisetelegram
+
+For suggestions please make open an issue, will release updates at 25 stars
