@@ -4,8 +4,6 @@ from itertools import cycle
 from urllib.request import urlopen, Request
 #Ur Info
 token = "UrToken"
-serverID = "Server id, right click server "
-channelID = "Channel id, must match server id ofc"
 
 bot = discum.Client(token=token, log=False)
 def close_after_fetching(resp, guild_id):
