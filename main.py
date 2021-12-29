@@ -3,7 +3,7 @@ from threading import Thread
 from itertools import cycle
 from urllib.request import urlopen, Request
 #Ur Info
-token = "OTIwNDQwMzI3OTgxMTI1NzIy.YcxP8w.RSWDkpXeP3PzsSYCkIuNZlY1C9Y"
+token = "UrToken"
 serverID = "Server id, right click server "
 channelID = "Channel id, must match server id ofc"
 
