@@ -97,7 +97,7 @@ def changer(namepfp, tokenformat):
             req = Request(url=next(urls), headers=headers) 
             b64img = base64.b64encode(urlopen(req).read()).decode('utf-8')
             try:
-                httpx.patch('https://discord.com/api/v9/users/@me', headers=headers, json={"avatar":f'data:image/png;base64,{b64img}', "password":token[1]})
+                httpx.patch('https://discord.com/api/v9/users/@me', headers=headers, json={"avatar":f'data:image/png;base64,{b64img}'})
             except Exception as err:
                 print(err)
         input(f"Succesfully changed the Avatars of {len(tokens)}!\nPress enter to rerun the program...")    
