@@ -14,7 +14,9 @@ python -m pip install more-itertools
 
 For hq tokens go to http://discord.gg/tokenshop or http://t.me/praisetelegram
 
-For suggestions please make open an issue, will release updates at 25 stars
+For suggestions please make open an issue, will release next big update at 25 stars
+
+**PROXY SUPPORT AT 10 STARS**
 
 Common errors with fixes:
 ```
