@@ -7,6 +7,7 @@ Setup:
 3. Run these cmds in terminal. 
 ```
 python -m pip install --user --upgrade git+https://github.com/Merubokkusu/Discord-S.C.U.M.git#egg=discum
+^ install git > https://git-scm.com/downloads
 python -m pip install httpx
 python -m pip install more-itertools
 ```
