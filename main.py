@@ -58,46 +58,27 @@ def scrape(guild_id, channel_id):
         input(f"Failed to scrape. Error: {err}")
 
 def changer(namepfp, tokenformat):
+    os.system('cls' if os.name == 'nt' else 'clear')
     tokens = []
     urls = []
     usernames = []
     tokenfile = open("data/tokens.txt", "r").read().splitlines()
     urls = cycle(open("data/pfps.txt", "r").read().splitlines())
     usernames = cycle(open("data/usernames.txt", "r").read().splitlines())
-    if tokenformat == "1":
-        for i in tokenfile:
-            tokens.append(i)
-    elif tokenformat == "2":
-        for i in tokenfile:
-            tokenunformatted = i.split(":")
-            token = tokenunformatted[1]
-            password = tokenunformatted[0]
-            tokens.append(f"{token}:{password}")
-    elif tokenformat == "3":
-        for i in tokenfile:
-            tokenunformatted = i.split(":")
-            token = tokenunformatted[2]
-            password = tokenunformatted[1]
-            tokens.append(f"{token}:{password}")
-    elif tokenformat == "4":
-        for i in tokenfile:
-            tokenunformatted = i.split(":")
-            token = tokenunformatted[0]
-            password = tokenunformatted[2]
-            tokens.append(f"{token}:{password}")
-    elif tokenformat == "5":
-        for i in tokenfile:
-            tokenunformatted = i.split(":")
-            token = tokenunformatted[2]
-            password = tokenunformatted[0]
-            tokens.append(f"{token}:{password}")
-    elif tokenformat == "6":
-        for i in tokenfile:
-            tokenunformatted = i.split(":")
-            tokens = tokenunformatted[0]
-            password = tokenunformatted[1]
-            tokens.append(f"{token}:{password}")
+    if tokenformat=='1':
+        for i in tokenfile:tokens.append(i)
+    elif tokenformat=='2':
+        for i in tokenfile:tokenunformatted=i.split(':');token=tokenunformatted[1];password=tokenunformatted[0];tokens.append(f"{token}:{password}")
+    elif tokenformat=='3':
+        for i in tokenfile:tokenunformatted=i.split(':');token=tokenunformatted[2];password=tokenunformatted[1];tokens.append(f"{token}:{password}")
+    elif tokenformat=='4':
+        for i in tokenfile:tokenunformatted=i.split(':');token=tokenunformatted[0];password=tokenunformatted[2];tokens.append(f"{token}:{password}")
+    elif tokenformat=='5':
+        for i in tokenfile:tokenunformatted=i.split(':');token=tokenunformatted[2];password=tokenunformatted[0];tokens.append(f"{token}:{password}")
+    elif tokenformat=='6':
+        for i in tokenfile:tokenunformatted=i.split(':');tokens=tokenunformatted[0];password=tokenunformatted[1];tokens.append(f"{token}:{password}")
     if namepfp == "1":
+        print("Changing Avatars and Usernames, this may take a little bit.")
         for toucan in tokens:
             token = toucan.split(":")
             headers={'Authorization': token[0],'accept': '*/*','accept-language': 'en-US','connection': 'keep-alive','cookie': f'__cfduid = {rc(43)}; __dcfduid={rc(32)}; __sdcfduid={rc(96)}; locale=en-US','DNT': '1','origin': 'https://discord.com','sec-fetch-dest': 'empty','sec-fetch-mode': 'cors','sec-fetch-site': 'same-origin','referer': 'https://discord.com/channels/@me','TE': 'Trailers','User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36','X-Super-Properties': 'eyJvcyI6IldpbmRvd3MiLCJicm93c2VyIjoiQ2hyb21lIiwiZGV2aWNlIjoiIiwic3lzdGVtX2xvY2FsZSI6ImVuLVVTIiwiYnJvd3Nlcl91c2VyX2FnZW50IjoiTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzk2LjAuNDY2NC40NSBTYWZhcmkvNTM3LjM2IiwiYnJvd3Nlcl92ZXJzaW9uIjoiOTYuMC40NjY0LjQ1Iiwib3NfdmVyc2lvbiI6IjEwIiwicmVmZXJyZXIiOiIiLCJyZWZlcnJpbmdfZG9tYWluIjoiIiwicmVmZXJyZXJfY3VycmVudCI6Imh0dHBzOi8vZGlzY29yZC5jb20vIiwicmVmZXJyaW5nX2RvbWFpbl9jdXJyZW50IjoiZGlzY29yZC5jb20iLCJyZWxlYXNlX2NoYW5uZWwiOiJzdGFibGUiLCJjbGllbnRfYnVpbGRfbnVtYmVyIjoxMDg5MjQsImNsaWVudF9ldmVudF9zb3VyY2UiOm51bGx9',}
@@ -109,6 +90,7 @@ def changer(namepfp, tokenformat):
                 print(err)
         input(f"Succesfully changed the Avatars and Usernames of {len(tokens)}!\nPress enter to rerun the program...")
     elif namepfp == "2":
+        print("Changing Avatars, this may take a little bit.")
         for toucan in tokens:
             token = toucan.split(":")
             headers={'Authorization': token[0],'accept': '*/*','accept-language': 'en-US','connection': 'keep-alive','cookie': f'__cfduid = {rc(43)}; __dcfduid={rc(32)}; __sdcfduid={rc(96)}; locale=en-US','DNT': '1','origin': 'https://discord.com','sec-fetch-dest': 'empty','sec-fetch-mode': 'cors','sec-fetch-site': 'same-origin','referer': 'https://discord.com/channels/@me','TE': 'Trailers','User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36','X-Super-Properties': 'eyJvcyI6IldpbmRvd3MiLCJicm93c2VyIjoiQ2hyb21lIiwiZGV2aWNlIjoiIiwic3lzdGVtX2xvY2FsZSI6ImVuLVVTIiwiYnJvd3Nlcl91c2VyX2FnZW50IjoiTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzk2LjAuNDY2NC40NSBTYWZhcmkvNTM3LjM2IiwiYnJvd3Nlcl92ZXJzaW9uIjoiOTYuMC40NjY0LjQ1Iiwib3NfdmVyc2lvbiI6IjEwIiwicmVmZXJyZXIiOiIiLCJyZWZlcnJpbmdfZG9tYWluIjoiIiwicmVmZXJyZXJfY3VycmVudCI6Imh0dHBzOi8vZGlzY29yZC5jb20vIiwicmVmZXJyaW5nX2RvbWFpbl9jdXJyZW50IjoiZGlzY29yZC5jb20iLCJyZWxlYXNlX2NoYW5uZWwiOiJzdGFibGUiLCJjbGllbnRfYnVpbGRfbnVtYmVyIjoxMDg5MjQsImNsaWVudF9ldmVudF9zb3VyY2UiOm51bGx9',}
@@ -120,6 +102,7 @@ def changer(namepfp, tokenformat):
                 print(err)
         input(f"Succesfully changed the Avatars of {len(tokens)}!\nPress enter to rerun the program...")    
     elif namepfp == "3":
+        print("Changing Usernames, this may take a little bit.")
         for toucan in tokens:
             token = toucan.split(":")
             headers={'Authorization': token[0],'accept': '*/*','accept-language': 'en-US','connection': 'keep-alive','cookie': f'__cfduid = {rc(43)}; __dcfduid={rc(32)}; __sdcfduid={rc(96)}; locale=en-US','DNT': '1','origin': 'https://discord.com','sec-fetch-dest': 'empty','sec-fetch-mode': 'cors','sec-fetch-site': 'same-origin','referer': 'https://discord.com/channels/@me','TE': 'Trailers','User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36','X-Super-Properties': 'eyJvcyI6IldpbmRvd3MiLCJicm93c2VyIjoiQ2hyb21lIiwiZGV2aWNlIjoiIiwic3lzdGVtX2xvY2FsZSI6ImVuLVVTIiwiYnJvd3Nlcl91c2VyX2FnZW50IjoiTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzk2LjAuNDY2NC40NSBTYWZhcmkvNTM3LjM2IiwiYnJvd3Nlcl92ZXJzaW9uIjoiOTYuMC40NjY0LjQ1Iiwib3NfdmVyc2lvbiI6IjEwIiwicmVmZXJyZXIiOiIiLCJyZWZlcnJpbmdfZG9tYWluIjoiIiwicmVmZXJyZXJfY3VycmVudCI6Imh0dHBzOi8vZGlzY29yZC5jb20vIiwicmVmZXJyaW5nX2RvbWFpbl9jdXJyZW50IjoiZGlzY29yZC5jb20iLCJyZWxlYXNlX2NoYW5uZWwiOiJzdGFibGUiLCJjbGllbnRfYnVpbGRfbnVtYmVyIjoxMDg5MjQsImNsaWVudF9ldmVudF9zb3VyY2UiOm51bGx9',}
@@ -128,6 +111,7 @@ def changer(namepfp, tokenformat):
             except Exception as err:
                 print(err)
         input(f"Succesfully changed the Usernames of {len(tokens)}!\nPress enter to rerun the program...")  
+
 try:
     os.system('cls' if os.name == 'nt' else 'clear')
     while True:
