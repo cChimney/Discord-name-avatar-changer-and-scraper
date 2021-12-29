@@ -15,3 +15,9 @@ python -m pip install more-itertools
 For hq tokens go to http://discord.gg/tokenshop or http://t.me/praisetelegram
 
 For suggestions please make open an issue, will release updates at 25 stars
+
+Common errors with fixes:
+```
+**ValueError: unknown url type: ''**
+Scrape before you try to use the changer.
+```
