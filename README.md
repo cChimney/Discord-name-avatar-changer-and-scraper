@@ -2,9 +2,10 @@
 Change the names and avatars of ur accounts, using tokens.txt for ur tokens. Also scrapes the avatars and names from a server chosen by you. 
 
 Setup:
-1. Put tokens in tokens.txt, any supported format but must include password.
-2. Put token to use in main.py, edit using notepad or whatever. Change line 6.
-3. Run these cmds in terminal. 
+1. Put tokens in data/tokens.txt, any supported format but must include password.
+2. Proxies in data/proxies.txt
+3. Put token to use for scraping in config.json.
+4. Run these cmds in terminal. 
 ```
 python -m pip install --user --upgrade git+https://github.com/Merubokkusu/Discord-S.C.U.M.git#egg=discum
 ^ install git > https://git-scm.com/downloads
@@ -12,14 +13,11 @@ python -m pip install httpx
 python -m pip install more-itertools
 ```
 
-For hq tokens go to http://discord.gg/tokenshop or http://t.me/praisetelegram
+**For suggestions please open an issue, will release next update at 25 stars, lmk what update u want**
 
-For suggestions please make open an issue, will release next big update at 25 stars
-
-**PROXY SUPPORT AT 10 STARS**
 
 Common errors with fixes:
 ```
-**ValueError: unknown url type: ''**
-Scrape before you try to use the changer.
+Discum errors = python -m pip install --user --upgrade git+https://github.com/Merubokkusu/Discord-S.C.U.M.git#egg=discum
+git errors = ^ install git > https://git-scm.com/downloads
 ```
