@@ -1,4 +1,9 @@
 # Discord-name-avatar-changer-and-scraper
+
+
+i do know that the code looks like shit atm lol idc tho
+
+
 Change the names and avatars of ur accounts, using tokens.txt for ur tokens. Also scrapes the avatars and names from a server chosen by you. 
 
 Setup:
